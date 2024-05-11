@@ -1,5 +1,4 @@
-<div>
-    <header class="py-4 shadow-sm bg-white">
+<header class="py-4 shadow-sm bg-white">
         <div class="container flex items-center justify-between">
             <a href="index.html">
                 <img src="assets/images/logo.svg" alt="Logo" class="w-32">
@@ -43,7 +42,7 @@
                 </a>
             </div>
         </div>
-    </header>
+</header>
 
     <nav class="bg-gray-800">
         <div class="container flex">
@@ -94,4 +93,3 @@
             </div>
         </div>
     </nav>
-</div>
