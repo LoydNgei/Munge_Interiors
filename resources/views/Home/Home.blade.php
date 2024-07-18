@@ -1,4 +1,10 @@
-<x-homecomp.layout>
-    <x-homecomp.navbar></x-homecomp.navbar>
-        {{-- <x-homecomp.banner></x-homecomp.banner> --}}
-</x-homecomp.layout>
+<x-layout>
+    <x-navbar></x-navbar>
+        <x-banner></x-banner>
+        <x-features></x-features>
+        <x-categories></x-categories>
+        <x-newarrivals></x-newarrivals>
+        <x-ads></x-ads>
+        <x-product></x-product>
+        <x-footer></x-footer>
+</x-layout>

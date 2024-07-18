@@ -58,7 +58,7 @@
                     <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Support</h3>
                     <div class="mt-4 space-y-4">
                         <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Pricing</a>
-                        <!-- <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Documentation</a> -->
+                        <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Documentation</a>
                         <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Guides</a>
                         <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">API Status</a>
                     </div>
@@ -72,7 +72,7 @@
 <!-- copyright -->
 <div class="bg-gray-800 py-4">
     <div class="container flex items-center justify-between">
-        <p class="text-white">&copy; TailCommerce - All Right Reserved</p>
+        <p class="text-white">&copy; Developed by <a href="">Loyd</a> - All Right Reserved</p>
         <div>
             <img src="assets/images/methods.png" alt="methods" class="h-5">
         </div>
