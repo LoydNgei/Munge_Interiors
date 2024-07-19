@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function login () {
-        return view('login');
+        return view('Auth/login');
     }
 
     public function register () {
-        return view('register');
+        return view('Auth/register');
     }
 
     public function loginpost () {
