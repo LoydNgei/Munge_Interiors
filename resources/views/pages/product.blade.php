@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product - Ecommerce Tailwind</title>
-
-    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="../assets/css/main.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-</head>
-
-<body>
-    <!-- header -->
-    <!-- ./header -->
-
-    <!-- navbar -->
-    <!-- ./navbar -->
-
+<x-layout>
+    <x-navbar></x-navbar>
     <!-- breadcrumb -->
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
@@ -392,20 +365,5 @@
     </div>
     <!-- ./related product -->
 
-    <!-- footer -->
-    <!-- ./footer -->
-
-    <!-- copyright -->
-    <div class="bg-gray-800 py-4">
-        <div class="container flex items-center justify-between">
-            <p class="text-white">&copy; TailCommerce - All Right Reserved</p>
-            <div>
-                <img src="../assets/images/methods.png" alt="methods" class="h-5">
-            </div>
-        </div>
-    </div>
-    <!-- ./copyright -->
-
-</body>
-
-</html>
+<x-footer></x-footer>
+</x-layout>

@@ -147,5 +147,4 @@
     <!-- ./account wrapper -->
 
 <x-footer></x-footer>
-
 </x-layout>

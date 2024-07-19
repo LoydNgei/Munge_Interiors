@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,35 @@ use App\Http\Controllers\UserController;
 |
 */
 
+
 Route::get('/', [HomeController::class, 'home']);
+
+Route::get('/shop', [PageController::class, 'shop']);
+
+Route::get('/account', [PageController::class, 'account']);
+
+Route::get('/wishlist', [PageController::class, 'wishlist']);
+
+Route::get('/product', [PageController::class, 'product']);
+
+Route::get('/checkout', [PageController::class, 'checkout']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Authentication Routes
 
 Route::get('/login', [UserController::class, 'login']);
 
 Route::get('/register', [UserController::class, 'register']);
+

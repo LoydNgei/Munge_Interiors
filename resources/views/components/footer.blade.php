@@ -1,13 +1,6 @@
-   <!-- footer -->
-   <footer class="bg-white pt-16 pb-12 border-t border-gray-100">
+<footer class="bg-white pt-16 pb-12 border-t border-gray-100">
     <div class="container grid grid-cols-1 ">
         <div class="col-span-1 space-y-4">
-            <img src="assets/images/logo.svg" alt="logo" class="w-30">
-            <div class="mr-2">
-                <p class="text-gray-500">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, hic?
-                </p>
-            </div>
             <div class="flex space-x-5">
                 <a href="#" class="text-gray-400 hover:text-gray-500"><i
                         class="fa-brands fa-facebook-square"></i></a>
@@ -74,7 +67,7 @@
     <div class="container flex items-center justify-between">
         <p class="text-white">&copy; Developed by <a href="">Loyd</a> - All Right Reserved</p>
         <div>
-            <img src="assets/images/methods.png" alt="methods" class="h-5">
+            <img src="" alt="methods" class="h-5">
         </div>
     </div>
 </div>
