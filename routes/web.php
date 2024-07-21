@@ -34,14 +34,6 @@ Route::get('/checkout', [PageController::class, 'checkout']);
 
 
 
-
-
-
-
-
-
-
-
 // Authentication Routes
 
 Route::get('/login', [UserController::class, 'login']);
