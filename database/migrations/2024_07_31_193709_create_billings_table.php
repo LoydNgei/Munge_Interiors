@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('billings', function (Blueprint $table) {
-            $table->id();
+            $table->id('billing_id');
+            $table->foreignId('user_id')->constrained('users', 'user_id')->onDelete('cascade');
+            $table->string('billing_address');
+            $table->string('user_card_number');
             $table->timestamps();
         });
     }
