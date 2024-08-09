@@ -7,6 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+
+
+    protected $primaryKey = 'order_id';
+
+    protected $fillable = [
+        // 'order_id',
+        'user_id',
+        'total_amount',
+        'order_status',
+        'payment_status',
+
+    ];
+
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
