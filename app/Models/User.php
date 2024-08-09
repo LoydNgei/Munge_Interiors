@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'user_id';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +24,8 @@ class User extends Authenticatable
         'email',
         'password',
         'confirm_password',
+        'role',
+        'last_login',
     ];
 
     /**
@@ -45,4 +49,12 @@ class User extends Authenticatable
         'password' => 'hashed',
         'confirm_password' => 'hashed',
     ];
+
+    public function orders() {
+        return $this->hasMany(Order::class, 'user_id');
+    }
+
+    public function billings() {
+        return $this->hasMany(Billing::class, 'user_id');
+    }
 }
