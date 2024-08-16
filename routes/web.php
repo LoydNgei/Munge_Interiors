@@ -25,7 +25,8 @@ Route::get('/account', [PageController::class, 'account']);
 
 Route::get('/wishlist', [PageController::class, 'wishlist']);
 
-Route::get('/product', [PageController::class, 'product']);
+// Revisit
+Route::get('/product', [ProductController::class, 'product']);
 
 Route::get('/checkout', [PageController::class, 'checkout']);
 
