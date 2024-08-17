@@ -13,7 +13,7 @@ class Billing extends Model
 
     protected $fillable = [
         'user_id',
-        'billng_address',
+        'billing_address',
         'user_card_number'
     ];
 
