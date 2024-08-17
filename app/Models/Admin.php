@@ -22,7 +22,8 @@ class Admin extends Model
         'remember_token',
     ];
 
-    public function someRelationship() {
-        
+    
+    public function norelationship() {
+
     }
 }
