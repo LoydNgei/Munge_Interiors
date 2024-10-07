@@ -63,7 +63,7 @@
             </div>
             <!-- ./login with -->
 
-            <p class="mt-4 text-center text-gray-600">Already have account? <a href="login.html"
+            <p class="mt-4 text-center text-gray-600">Already have account? <a href="/login"
                     class="text-primary">Login now</a></p>
         </div>
     </div>
