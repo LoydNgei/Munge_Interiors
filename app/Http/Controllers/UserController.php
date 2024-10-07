@@ -13,15 +13,32 @@ class UserController extends Controller
         return view('Auth/register');
     }
 
-    public function loginpost () {
+    // New user registration
+    public function registerpost (Request $request) {
+        $formFields = $request->validate([
+            'name' => 'required|unique:users',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
 
+        // Save the new user
+        $user = new User();
+        $user->name = $formFields['name'];
+        $user->email = $formFields['email'];
+        $user->password = Hash::make($formFields['password']);
+        $user->save();
     }
 
-    public function registerpost () {
-
+    public function loginpost (Request $request) {
+        $formFields = request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
     }
 
     public function logout () {
-
+        Session::flush();
+        Auth::logout;
+        redirect('/');
     }
 }
