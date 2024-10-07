@@ -50,7 +50,7 @@
             </div>
             <!-- ./login with -->
 
-            <p class="mt-4 text-center text-gray-600">Don't have account? <a href="register.html"
+            <p class="mt-4 text-center text-gray-600">Don't have account? <a href="/register"
                     class="text-primary">Register
                     now</a></p>
         </div>
@@ -58,5 +58,4 @@
     <!-- ./login -->
 
     <x-footer></x-footer>
-
 </x-layout>
