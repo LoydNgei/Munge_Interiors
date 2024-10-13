@@ -8,7 +8,8 @@
             <p class="text-gray-600 mb-6 text-sm">
                 Register for new cosutumer
             </p>
-            <form action="#" method="post" autocomplete="off">
+            <form method="POST" action="{{ route('register.post') }}" autocomplete="off">
+                @csrf
                 <div class="space-y-2">
                     <div>
                         <label for="name" class="text-gray-600 mb-2 block">Full Name</label>
@@ -25,12 +26,6 @@
                     <div>
                         <label for="password" class="text-gray-600 mb-2 block">Password</label>
                         <input type="password" name="password" id="password"
-                            class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
-                            placeholder="*******">
-                    </div>
-                    <div>
-                        <label for="confirm" class="text-gray-600 mb-2 block">Confirm password</label>
-                        <input type="password" name="confirm" id="confirm"
                             class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
                             placeholder="*******">
                     </div>
