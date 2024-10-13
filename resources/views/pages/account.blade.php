@@ -1,5 +1,5 @@
 <x-layout>
-<x-navbar></x-navbar>
+    <x-navbar></x-navbar>
     <!-- breadcrumb -->
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
@@ -19,82 +19,13 @@
         <div class="col-span-3">
             <div class="px-4 py-3 shadow flex items-center gap-4">
                 <div class="flex-shrink-0">
-                    <img src="../assets/images/avatar.png" alt="profile"
+                    <img src="{{ Auth::user()->avatar ?? '../assets/images/avatar.png' }}" alt="profile"
                         class="rounded-full w-14 h-14 border border-gray-200 p-1 object-cover">
                 </div>
                 <div class="flex-grow">
                     <p class="text-gray-600">Hello,</p>
-                    <h4 class="text-gray-800 font-medium">John Doe</h4>
+                    <h4 class="text-gray-800 font-medium">{{ Auth::user()->name }}</h4> 
                 </div>
-            </div>
-
-            <div class="mt-6 bg-white shadow rounded p-4 divide-y divide-gray-200 space-y-4 text-gray-600">
-                <div class="space-y-1 pl-8">
-                    <a href="#" class="relative text-primary block font-medium capitalize transition">
-                        <span class="absolute -left-8 top-0 text-base">
-                            <i class="fa-regular fa-address-card"></i>
-                        </span>
-                        Manage account
-                    </a>
-                    <a href="#" class="relative hover:text-primary block capitalize transition">
-                        Profile information
-                    </a>
-                    <a href="#" class="relative hover:text-primary block capitalize transition">
-                        Manage addresses
-                    </a>
-                    <a href="#" class="relative hover:text-primary block capitalize transition">
-                        Change password
-                    </a>
-                </div>
-
-                <div class="space-y-1 pl-8 pt-4">
-                    <a href="#" class="relative hover:text-primary block font-medium capitalize transition">
-                        <span class="absolute -left-8 top-0 text-base">
-                            <i class="fa-solid fa-box-archive"></i>
-                        </span>
-                        My order history
-                    </a>
-                    <a href="#" class="relative hover:text-primary block capitalize transition">
-                        My returns
-                    </a>
-                    <a href="#" class="relative hover:text-primary block capitalize transition">
-                        My Cancellations
-                    </a>
-                    <a href="#" class="relative hover:text-primary block capitalize transition">
-                        My reviews
-                    </a>
-                </div>
-
-                <div class="space-y-1 pl-8 pt-4">
-                    <a href="#" class="relative hover:text-primary block font-medium capitalize transition">
-                        <span class="absolute -left-8 top-0 text-base">
-                            <i class="fa-regular fa-credit-card"></i>
-                        </span>
-                        Payment methods
-                    </a>
-                    <a href="#" class="relative hover:text-primary block capitalize transition">
-                        voucher
-                    </a>
-                </div>
-
-                <div class="space-y-1 pl-8 pt-4">
-                    <a href="#" class="relative hover:text-primary block font-medium capitalize transition">
-                        <span class="absolute -left-8 top-0 text-base">
-                            <i class="fa-regular fa-heart"></i>
-                        </span>
-                        My wishlist
-                    </a>
-                </div>
-
-                <div class="space-y-1 pl-8 pt-4">
-                    <a href="#" class="relative hover:text-primary block font-medium capitalize transition">
-                        <span class="absolute -left-8 top-0 text-base">
-                            <i class="fa-regular fa-arrow-right-from-bracket"></i>
-                        </span>
-                        Logout
-                    </a>
-                </div>
-
             </div>
         </div>
         <!-- ./sidebar -->
@@ -108,9 +39,8 @@
                     <a href="#" class="text-primary">Edit</a>
                 </div>
                 <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">John Doe</h4>
-                    <p class="text-gray-800">example@mail.com</p>
-                    <p class="text-gray-800">0811 8877 988</p>
+                    <p class="text-gray-600"> {{ Auth::user()->name }}</p> 
+                    <p class="text-gray-600"> {{ Auth::user()->email }}</p> 
                 </div>
             </div>
 
@@ -120,23 +50,23 @@
                     <a href="#" class="text-primary">Edit</a>
                 </div>
                 <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">John Doe</h4>
-                    <p class="text-gray-800">Medan, North Sumatera</p>
-                    <p class="text-gray-800">20371</p>
-                    <p class="text-gray-800">0811 8877 988</p>
+                    <h4 class="text-gray-700 font-medium">{{ Auth::user()->shipping_address->name ?? 'N/A' }}</h4> <!-- Display shipping name -->
+                    <p class="text-gray-800">{{ Auth::user()->shipping_address->address ?? 'N/A' }}</p> <!-- Display shipping address -->
+                    <p class="text-gray-800">{{ Auth::user()->shipping_address->zipcode ?? 'N/A' }}</p> <!-- Display shipping zipcode -->
+                    <p class="text-gray-800">{{ Auth::user()->shipping_address->phone ?? 'N/A' }}</p> <!-- Display shipping phone -->
                 </div>
             </div>
 
             <div class="shadow rounded bg-white px-4 pt-6 pb-8">
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="font-medium text-gray-800 text-lg">Billing address</h3>
-                    <a href="#" class="text-primary">Edit</a>
+                    <a href="{{ route('billing.show') }}" class="text-primary">Edit</a>
                 </div>
                 <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">John Doe</h4>
-                    <p class="text-gray-800">Medan, North Sumatera</p>
-                    <p class="text-gray-800">20317</p>
-                    <p class="text-gray-800">0811 8877 988</p>
+                    <h4 class="text-gray-700 font-medium">{{ Auth::user()->billing_address->name ?? 'N/A' }}</h4> <!-- Display billing name -->
+                    <p class="text-gray-800">{{ Auth::user()->billing_address->address ?? 'N/A' }}</p> <!-- Display billing address -->
+                    <p class="text-gray-800">{{ Auth::user()->billing_address->zipcode ?? 'N/A' }}</p> <!-- Display billing zipcode -->
+                    <p class="text-gray-800">{{ Auth::user()->billing_address->phone ?? 'N/A' }}</p> <!-- Display billing phone -->
                 </div>
             </div>
 
@@ -146,5 +76,5 @@
     </div>
     <!-- ./account wrapper -->
 
-<x-footer></x-footer>
+    <x-footer></x-footer>
 </x-layout>
