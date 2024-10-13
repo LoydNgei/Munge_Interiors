@@ -1,5 +1,5 @@
 <x-layout>
-    <x-navbar></x-navbar>
+        <x-navbar></x-navbar>
         <x-banner></x-banner>
         <x-features></x-features>
         <x-categories></x-categories>
