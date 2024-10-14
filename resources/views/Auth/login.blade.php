@@ -46,7 +46,7 @@
             <div class="mt-4 flex gap-4">
                 <a href="#"
                     class="w-1/2 py-2 text-center text-white bg-blue-800 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-700">facebook</a>
-                <a href="#"
+                <a href="{{ route('auth.google') }}"
                     class="w-1/2 py-2 text-center text-white bg-red-600 rounded uppercase font-roboto font-medium text-sm hover:bg-red-500">google</a>
             </div>
             <!-- ./login with -->

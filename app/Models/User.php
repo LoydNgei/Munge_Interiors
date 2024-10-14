@@ -23,7 +23,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'confirm_password',
         'role',
         'last_login',
     ];
@@ -54,7 +53,7 @@ class User extends Authenticatable
         return $this->hasMany(Order::class, 'user_id');
     }
 
-    public function billings() {
-        return $this->hasMany(Billing::class, 'user_id');
+    public function billing() {
+        return $this->hasOne(Billing::class, 'user_id');
     }
 }

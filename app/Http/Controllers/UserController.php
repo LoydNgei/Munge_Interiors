@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\Hash; 
 use Illuminate\Support\Facades\Session;
+use Socialite;
 
 
 class UserController extends Controller
@@ -62,5 +63,50 @@ class UserController extends Controller
         Session::flush();
         Auth::logout;
         return redirect('/');
+    }
+
+    // Redirect to Google for Authentication
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+    // Handle Google callback
+    public function handleGoogleCallback()
+    {
+        $googleUser = Socialite::driver('google')->user();
+        $user = user::where('email', $googleUser->getEmail())->first();
+
+        if (!$user) {
+            $user = User::create([
+                'name' => $googleUser->getName(),
+                'email' => $googleUser->getEmail(),
+                'password' => bcrypt(str_random(16)),
+            ]);
+        }
+
+        Auth::login($user);
+        return redirect()->route('/');
+    }
+
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function handleFacebookCallback()
+    {
+        $facebookUser = Socialite::driver('facebook')->user();
+        $User = User::where('email', $facebookUser->getEmail())->first();
+
+        if(!$user) {
+            $user = User::create([
+                'name' => $facebookUser->getName(),
+                'email' => $facebookUser->getEmail(),
+                'password' => $bcrypt(str_random(16)),
+            ]);
+        }
+
+        Auth::login($user);
+        return redirect()->route('/');
     }
 }

@@ -19,8 +19,8 @@
         <div class="col-span-3">
             <div class="px-4 py-3 shadow flex items-center gap-4">
                 <div class="flex-shrink-0">
-                    <img src="{{ Auth::user()->avatar ?? '../assets/images/avatar.png' }}" alt="profile"
-                        class="rounded-full w-14 h-14 border border-gray-200 p-1 object-cover">
+                  {{--  <img src="{{ Auth::user()->avatar ?? '../assets/images/avatar.png' }}" alt="profile"
+                         class="rounded-full w-14 h-14 border border-gray-200 p-1 object-cover"> --}}
                 </div>
                 <div class="flex-grow">
                     <p class="text-gray-600">Hello,</p>
@@ -59,16 +59,17 @@
 
             <div class="shadow rounded bg-white px-4 pt-6 pb-8">
                 <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Billing address</h3>
-                    <a href="{{ route('billing.show') }}" class="text-primary">Edit</a>
-                </div>
+                  <h3 class="font-medium text-gray-800 text-lg">Billing Information</h3>
+                  <a href="{{ route('billing.show') }}" class="text-primary">Edit</a> </div>
                 <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">{{ Auth::user()->billing_address->name ?? 'N/A' }}</h4> <!-- Display billing name -->
-                    <p class="text-gray-800">{{ Auth::user()->billing_address->address ?? 'N/A' }}</p> <!-- Display billing address -->
-                    <p class="text-gray-800">{{ Auth::user()->billing_address->zipcode ?? 'N/A' }}</p> <!-- Display billing zipcode -->
-                    <p class="text-gray-800">{{ Auth::user()->billing_address->phone ?? 'N/A' }}</p> <!-- Display billing phone -->
+                  @if(Auth::user()->billing)
+                    <p class="text-gray-800">{{ Auth::user()->billing->billing_address ?? 'N/A' }}</p>
+                    <p class="text-gray-800">{{ Auth::user()->billing->user_card_number ?? 'N/A' }}</p>
+                  @else
+                    <p class="text-gray-600">No billing information found. Please add your billing information below.</p>
+                  @endif
                 </div>
-            </div>
+              </div>
 
         </div>
         <!-- ./info -->

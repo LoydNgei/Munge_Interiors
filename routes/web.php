@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\EnsureLoggedIn;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,6 @@ Route::get('/', [HomeController::class, 'home']);
 // Display pages - PageController
 Route::controller(PageController::class)->group(function () {
     Route::get('/shop', 'shop')->name('page.shop');
-    Route::get('/account', 'account')->name('page.account');
     Route::get('/wishlist', 'wishlist')->name('page.wishlist');
     Route::get('/checkout', 'checkout')->name('page.checkout');
 });
@@ -57,5 +57,14 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/login', 'postlogin')->name('login.post');
     Route::get('/register', 'register')->name('register');
     Route::post('/register', 'postregister')->name('register.post');
+    Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
+    Route::get('auth/google/callback', 'handleGoogleCallback');
+    Route::get('login/facebook', 'redirectToFacebook')->name('login.facebook');
+    Route::get('login/facebook/callback', 'handleFacebookCallback');
+});
+
+// Protected routes: Needs Authentication before accessing
+Route::group(['middleware' => 'ensure_logged_in'], function() {
+    route::get('/account', [PageController::class, 'account'])->name('page.account');
 });
 
