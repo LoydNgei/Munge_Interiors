@@ -21,7 +21,7 @@ use App\Http\Middleware\EnsureLoggedIn;
 
 
 // Home
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // Display pages - PageController
 Route::controller(PageController::class)->group(function () {
@@ -57,10 +57,11 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/login', 'postlogin')->name('login.post');
     Route::get('/register', 'register')->name('register');
     Route::post('/register', 'postregister')->name('register.post');
+    Route::get('/logout', 'logout')->name('logout');
     Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
     Route::get('auth/google/callback', 'handleGoogleCallback');
-    Route::get('login/facebook', 'redirectToFacebook')->name('login.facebook');
-    Route::get('login/facebook/callback', 'handleFacebookCallback');
+    Route::get('auth/facebook', 'redirectToFacebook')->name('login.facebook');
+    Route::get('auth/facebook/callback', 'handleFacebookCallback');
 });
 
 // Protected routes: Needs Authentication before accessing
