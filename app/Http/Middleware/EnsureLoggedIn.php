@@ -15,6 +15,11 @@ class EnsureLoggedIn
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if ($request->is('auth/google*') || $request->is('auth/facebook*'))
+        {
+            return $next($request);
+        }
+
         if (!Auth::check()) {
             return redirect()->route('register');
         }
