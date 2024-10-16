@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 use App\Models\User; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
-use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use Socialite;
+use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Str;
 
 
 class UserController extends Controller
@@ -62,51 +63,56 @@ class UserController extends Controller
     public function logout () {
         Session::flush();
         Auth::logout;
-        return redirect('/');
+        return redirect('login')->with('message', 'Oops! you logged out!');
     }
 
     // Redirect to Google for Authentication
     public function redirectToGoogle()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
     // Handle Google callback
     public function handleGoogleCallback()
     {
-        $googleUser = Socialite::driver('google')->user();
-        $user = user::where('email', $googleUser->getEmail())->first();
+        $googleUser = Socialite::driver('google')->stateless()->user();
+        $user = User::where('email', $googleUser->getEmail())->first();
 
         if (!$user) {
             $user = User::create([
                 'name' => $googleUser->getName(),
                 'email' => $googleUser->getEmail(),
-                'password' => bcrypt(str_random(16)),
+                'password' => bcrypt(Str::random(16)),
             ]);
         }
 
         Auth::login($user);
-        return redirect()->route('/');
+        return redirect()->route('home');
     }
 
     public function redirectToFacebook()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->stateless()->redirect();
     }
 
     public function handleFacebookCallback()
     {
-        $facebookUser = Socialite::driver('facebook')->user();
-        $User = User::where('email', $facebookUser->getEmail())->first();
+        try {
+            $facebookUser = Socialite::driver('facebook')->stateless()->user();
+            $User = User::where('email', $facebookUser->getEmail())->first();
+    
+            if(!$user) {
+                $user = User::create([
+                    'name' => $facebookUser->getName(),
+                    'email' => $facebookUser->getEmail(),
+                    'password' => bcrypt(Str::random(16)),
+                ]);
+            }
 
-        if(!$user) {
-            $user = User::create([
-                'name' => $facebookUser->getName(),
-                'email' => $facebookUser->getEmail(),
-                'password' => $bcrypt(str_random(16)),
-            ]);
+            Auth::login($user);
+            return redirect()->route('home');
+        } catch (Exception $e) {
+            \Log::error('Google Authentication Error: ' . $e->getMessage());
+            return redirect()->route('login')->with('error', 'Authentication failed');
         }
-
-        Auth::login($user);
-        return redirect()->route('/');
     }
 }
