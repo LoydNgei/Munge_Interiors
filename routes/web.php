@@ -69,3 +69,7 @@ Route::group(['middleware' => 'ensure_logged_in'], function() {
     route::get('/account', [PageController::class, 'account'])->name('page.account');
 });
 
+// Admin authentication
+Route::group(['middleware' => ''], function() {
+    route::get('/admin', [AdminController::class, 'admin'])->name('page.admin');
+});
