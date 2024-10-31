@@ -89,30 +89,30 @@ class UserController extends Controller
         return redirect()->route('home');
     }
 
-    public function redirectToFacebook()
-    {
-        return Socialite::driver('facebook')->stateless()->redirect();
-    }
+    // public function redirectToFacebook()
+    // {
+    //     return Socialite::driver('facebook')->stateless()->redirect();
+    // }
 
-    public function handleFacebookCallback()
-    {
-        try {
-            $facebookUser = Socialite::driver('facebook')->stateless()->user();
-            $User = User::where('email', $facebookUser->getEmail())->first();
+    // public function handleFacebookCallback()
+    // {
+    //     try {
+    //         $facebookUser = Socialite::driver('facebook')->stateless()->user();
+    //         $User = User::where('email', $facebookUser->getEmail())->first();
     
-            if(!$user) {
-                $user = User::create([
-                    'name' => $facebookUser->getName(),
-                    'email' => $facebookUser->getEmail(),
-                    'password' => bcrypt(Str::random(16)),
-                ]);
-            }
+    //         if(!$user) {
+    //             $user = User::create([
+    //                 'name' => $facebookUser->getName(),
+    //                 'email' => $facebookUser->getEmail(),
+    //                 'password' => bcrypt(Str::random(16)),
+    //             ]);
+    //         }
 
-            Auth::login($user);
-            return redirect()->route('home');
-        } catch (Exception $e) {
-            \Log::error('Google Authentication Error: ' . $e->getMessage());
-            return redirect()->route('login')->with('error', 'Authentication failed');
-        }
-    }
+    //         Auth::login($user);
+    //         return redirect()->route('home');
+    //     } catch (Exception $e) {
+    //         \Log::error('Google Authentication Error: ' . $e->getMessage());
+    //         return redirect()->route('login')->with('error', 'Authentication failed');
+    //     }
+    // }
 }
