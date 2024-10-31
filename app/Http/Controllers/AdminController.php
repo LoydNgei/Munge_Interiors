@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+    public function display() {
+        return view('Admin.admin');
+    }
+
     public function postproducts() {
 
     }
