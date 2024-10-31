@@ -60,8 +60,8 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
     Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
     Route::get('auth/google/callback', 'handleGoogleCallback');
-    Route::get('auth/facebook', 'redirectToFacebook')->name('login.facebook');
-    Route::get('auth/facebook/callback', 'handleFacebookCallback');
+    // Route::get('auth/facebook', 'redirectToFacebook')->name('login.facebook');
+    // Route::get('auth/facebook/callback', 'handleFacebookCallback');
 });
 
 // Protected routes: Needs Authentication before accessing
@@ -70,6 +70,9 @@ Route::group(['middleware' => 'ensure_logged_in'], function() {
 });
 
 // Admin authentication
-Route::group(['middleware' => ''], function() {
-    route::get('/admin', [AdminController::class, 'admin'])->name('page.admin');
+Route::prefix('admin')->middleware('auth', 'admin')->group(function () {
+    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::resource('/products', 'ProductController');
+    Route::resource('/orders', 'OrderController');
+    Route::resource('/users', 'UserController');
 });
