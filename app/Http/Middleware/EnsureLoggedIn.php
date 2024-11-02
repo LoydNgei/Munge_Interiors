@@ -5,7 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
+
+
 class EnsureLoggedIn
 {
     /**
@@ -15,7 +17,7 @@ class EnsureLoggedIn
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->is('auth/google*') || $request->is('auth/facebook*'))
+        if ($request->is('auth/google*'))
         {
             return $next($request);
         }
