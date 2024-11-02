@@ -6,7 +6,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 use App\Http\Middleware\EnsureLoggedIn;
+use App\Http\Middleware\CheckAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,13 +67,21 @@ Route::controller(UserController::class)->group(function () {
 });
 
 // Protected routes: Needs Authentication before accessing
-Route::group(['middleware' => 'ensure_logged_in'], function() {
+Route::group(['middleware' => 'ensure.logged.in'], function() {
     route::get('/account', [PageController::class, 'account'])->name('page.account');
 });
 
+// Admin Registration
+Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.register');
+Route::post('/admin/register', [AdminController::class, 'postRegister'])->name('admin_register.post');
+
+// Admin Login
+Route::get('/admin', [AdminController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminController::class, 'login'])->name('admin_login.post');
+
 // Admin authentication
-Route::prefix('admin')->middleware('auth', 'admin')->group(function () {
-    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+Route::prefix('admin')->middleware(['check.admin'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource('/products', 'ProductController');
     Route::resource('/orders', 'OrderController');
     Route::resource('/users', 'UserController');
