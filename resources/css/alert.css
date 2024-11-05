@@ -1,0 +1,49 @@
+/* General Alert Styling */
+.alert-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(100%); /* Start off-screen */
+    padding: 20px 30px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    animation: slideIn 0.5s forwards;
+}
+
+/* Error and Success Colors */
+.alert-message.error {
+    background-color: #f44336; /* Red */
+}
+.alert-message.success {
+    background-color: #4CAF50; /* Green */
+}
+
+/* Icon Styling */
+.alert-message .icon {
+    font-size: 1.5em;
+}
+
+/* Animation Keyframes */
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -50%) translateX(100%);
+    }
+    to {
+        transform: translate(-50%, -50%) translateX(0);
+    }
+}
+
+/* Animation for Slide Out (Optional) */
+@keyframes slideOut {
+    from {
+        transform: translate(-50%, -50%) translateX(0);
+    }
+    to {
+        transform: translate(-50%, -50%) translateX(100%);
+    }
+}
