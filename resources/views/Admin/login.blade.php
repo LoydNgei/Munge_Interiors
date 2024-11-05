@@ -1,15 +1,24 @@
 <x-layout>
     <x-navbar></x-navbar>
-        <!-- login -->
+        <!-- Error and Success Messages -->
         @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
+            <div class="alert-message error">
+                <span class="icon">✖</span>
+                <span class="message-text">
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        {{ $error }}
                     @endforeach
-                </ul>                
+                </span>
             </div>
         @endif
+
+        @if(session('success'))
+            <div class="alert-message success">
+                <span class="icon">✔</span>
+                <span class="message-text">{{ session('success') }}</span>
+            </div>
+        @endif
+
         <div class="contain py-16">
             <div class="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
                 <h2 class="text-2xl uppercase font-medium mb-1">Login</h2>
