@@ -1,3 +1,7 @@
-<h1>
-    Welcome to the admin dashboard!!
-</h1>
+<x-admin-layout>
+    <x-admin-nav></x-admin-nav>
+    <x-admin-footer></x-admin-footer>
+</x-admin-layout>
+
+
+
