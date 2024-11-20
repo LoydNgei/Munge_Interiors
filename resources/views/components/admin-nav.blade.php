@@ -24,42 +24,42 @@
         <div class="h-full px-4 py-6">
             <ul class="space-y-4">
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Products
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Orders
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Customers
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Sales & Analytics
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Payments
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Discounts & Coupons
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Settings
                     </a>
                 </li>
@@ -68,7 +68,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 p-6">
+    <main class="flex-1 p-12">
         <div class="max-w-4xl mx-auto">
             <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Welcome to the Admin Dashboard</h1>
             <p class="text-gray-700 dark:text-gray-300">
