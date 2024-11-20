@@ -86,3 +86,9 @@ Route::prefix('admin')->middleware(['check.admin'])->group(function () {
     Route::resource('/orders', 'OrderController');
     Route::resource('/users', 'UserController');
 });
+
+Route::group(['middleware' => 'check.admin'], function () {
+    route::post('/admin/products/create', [ProductController::class, 'postProduct'])->name('');
+    route::put('/admin/products/{product}', [ProductController::class, 'updateProduct'])->name('');
+    route::delete('/admin/products/{product}', [ProductController::class, 'deleteProduct'])->name('');
+});
