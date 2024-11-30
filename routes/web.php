@@ -7,6 +7,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 use App\Http\Middleware\EnsureLoggedIn;
 use App\Http\Middleware\CheckAdmin;
 
@@ -82,13 +83,7 @@ Route::post('/admin/login', [AdminController::class, 'login'])->name('admin_logi
 // Admin authentication
 Route::prefix('admin')->middleware(['check.admin'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::resource('/products', 'ProductController');
-    Route::resource('/orders', 'OrderController');
-    Route::resource('/users', 'UserController');
-});
-
-Route::group(['middleware' => 'check.admin'], function () {
-    route::post('/admin/products/create', [ProductController::class, 'postProduct'])->name('');
-    route::put('/admin/products/{product}', [ProductController::class, 'updateProduct'])->name('');
-    route::delete('/admin/products/{product}', [ProductController::class, 'deleteProduct'])->name('');
+    Route::resource('/products', ProductController::class, ['as' => 'admin']);
+    Route::resource('/orders', OrderController::class, ['as' => 'admin']);
+    Route::resource('/users', UserController::class, ['only' => ['index'], 'as' => 'admin']);
 });
