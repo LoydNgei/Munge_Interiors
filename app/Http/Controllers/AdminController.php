@@ -12,7 +12,7 @@ class AdminController extends Controller
         if (Admin::count() > 0) {
             return redirect()->route('admin.login')->withErrors('Admin already exists. Please log in!');
         }
-        return view('Admin.register');
+        return view('Admin.Auth.register');
     }
 
     // Register only if no admin exists
@@ -34,7 +34,7 @@ class AdminController extends Controller
 
     // Show login form
     public function showLoginForm() {
-        return view('Admin.login');
+        return view('Admin.Auth.login');
     }
 
     // Handle login logic
@@ -66,5 +66,17 @@ class AdminController extends Controller
     public function logout() {
         session()->forget('admin_logged_in');
         return redirect()->route('admin.login')->with('success', 'Logged out successfully!');
+    }
+
+    // View all users by Admin
+    public function index() {
+        $users = User::all;
+        return view('Admin.Users.index', compact(users));
+    }
+
+    public function destroy(User $user) {
+        $user->delete();
+        return redirect()->route('admin.users.index')
+                         ->with('success', 'User deleted successfully');
     }
 }

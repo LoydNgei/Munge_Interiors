@@ -8,7 +8,7 @@ class ShippingController extends Controller
 {
     public function show ()
     {
-        return view('Shipping/shippingForm');
+        return view('User/Shipping/shippingForm');
     }
 
     public function edit (Request $shipping) {

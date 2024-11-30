@@ -12,14 +12,14 @@ class BillingController extends Controller
     public function show()
     {
         $billing = Billing::where('user_id', Auth::id())->first();
-        return view('Billing.billingForm', compact('billing'));
+        return view('User.Billing.billingForm', compact('billing'));
     }
 
     // Show the form to edit or create billing information
     public function edit($id)
     {
         $billing = Billing::findOrFail($id); 
-        return view('Billing.billingForm', compact('billing'));
+        return view('User.Billing.billingForm', compact('billing'));
     }
 
     // Store new billing information

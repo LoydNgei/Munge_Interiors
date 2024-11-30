@@ -7,18 +7,18 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function shop () {
-        return view('pages/shop');
+        return view('User/pages/shop');
     }
     public function account () {
-        return view('pages/account');
+        return view('User/pages/account');
     }
     public function wishlist () {
-        return view('pages/wishlist');
+        return view('User/pages/wishlist');
     }
     public function product () {
-        return view('pages/product');
+        return view('User/pages/product');
     }
     public function checkout () {
-        return view('pages/checkout');
+        return view('User/pages/checkout');
     }
 }

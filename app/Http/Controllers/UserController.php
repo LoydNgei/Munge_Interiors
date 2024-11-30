@@ -14,12 +14,12 @@ class UserController extends Controller
 {
     // View Login Page
     public function login () {
-        return view('Auth/login');
+        return view('User/Auth/login');
     }
 
     // View Register Page
     public function register () {
-        return view('Auth/register');
+        return view('User/Auth/register');
     }
 
     // New User Registration
@@ -89,30 +89,18 @@ class UserController extends Controller
         return redirect()->route('home');
     }
 
-    // public function redirectToFacebook()
-    // {
-    //     return Socialite::driver('facebook')->stateless()->redirect();
-    // }
+    // Admin view users
 
-    // public function handleFacebookCallback()
-    // {
-    //     try {
-    //         $facebookUser = Socialite::driver('facebook')->stateless()->user();
-    //         $User = User::where('email', $facebookUser->getEmail())->first();
-    
-    //         if(!$user) {
-    //             $user = User::create([
-    //                 'name' => $facebookUser->getName(),
-    //                 'email' => $facebookUser->getEmail(),
-    //                 'password' => bcrypt(Str::random(16)),
-    //             ]);
-    //         }
+    public function index() {
+        $users = User::all();
+        return view('Admin.Users.index', compact('users'));
+    }
 
-    //         Auth::login($user);
-    //         return redirect()->route('home');
-    //     } catch (Exception $e) {
-    //         \Log::error('Google Authentication Error: ' . $e->getMessage());
-    //         return redirect()->route('login')->with('error', 'Authentication failed');
-    //     }
-    // }
+    public function destroy(Product $product)
+    {
+        $product->delete();
+
+        return redirect()->route('products.index')
+                            ->with('success', 'Product deleted successfully.');
+    }
 }
