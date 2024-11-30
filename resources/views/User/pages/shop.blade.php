@@ -1,5 +1,5 @@
-<x-layout>
-    <x-navbar></x-navbar>
+<x-user.layout>
+    <x-user.navbar></x-user.navbar>
     <!-- breadcrumb -->
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
@@ -606,9 +606,9 @@
     </div>
     <!-- ./shop wrapper -->
 
-    <x-footer></x-footer>
+    <x-user.footer></x-user.footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
-</x-layout>
+</x-user.layout>

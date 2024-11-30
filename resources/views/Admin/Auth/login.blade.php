@@ -1,10 +1,27 @@
-<x-layout>
-    <x-navbar></x-navbar>
-        <!-- login -->
+<x-admin.layout>
+        <!-- Error and Success Messages -->
+        @if($errors->any())
+            <div class="alert-message error">
+                <span class="icon">✖</span>
+                <span class="message-text">
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach
+                </span>
+            </div>
+        @endif
+
+        @if(session('success'))
+            <div class="alert-message success">
+                <span class="icon">✔</span>
+                <span class="message-text">{{ session('success') }}</span>
+            </div>
+        @endif
+
         <div class="contain py-16">
             <div class="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
-                <h2 class="text-2xl uppercase font-medium mb-1">Register</h2>
-                <form method="POST" action="{{ route('admin_register.post') }}" autocomplete="off">
+                <h2 class="text-2xl uppercase font-medium mb-1">Login</h2>
+                <form method="POST" action="{{ route('admin_login.post') }}" autocomplete="off">
                     @csrf
                     <div class="space-y-2">
                         <div>
@@ -22,13 +39,13 @@
                     </div>
                     <div class="mt-4">
                         <button type="submit"
-                            class="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">Register</button>
+                            class="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">Login</button>
                     </div>
                 </form>
-                <p class="mt-4 text-center text-gray-600">Already have account?
-                    <a href="/admin/login" class="text-primary">Login now</a>
+                <p class="mt-4 text-center text-gray-600">Don't have account?
+                    <a href="/admin/register" class="text-primary">Register now</a>
                 </p>
             </div>
         </div>
-    <x-footer></x-footer>
-</x-layout>
+    <x-admin.footer></x-admin.footer>
+</x-admin.layout>

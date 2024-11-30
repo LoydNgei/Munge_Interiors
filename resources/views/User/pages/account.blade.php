@@ -1,5 +1,5 @@
-<x-layout>
-    <x-navbar></x-navbar>
+<x-user.layout>
+    <x-user.navbar></x-user.navbar>
     <!-- breadcrumb -->
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
@@ -77,5 +77,5 @@
     </div>
     <!-- ./account wrapper -->
 
-    <x-footer></x-footer>
-</x-layout>
+    <x-user.footer></x-user.footer>
+</x-user.layout>

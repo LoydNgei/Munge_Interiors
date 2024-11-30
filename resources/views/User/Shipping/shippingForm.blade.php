@@ -1,5 +1,5 @@
-<x-layout>
-    <x-navbar></x-navbar>
+<x-user.layout>
+    <x-user.navbar></x-user.navbar>
 
     <div class="container py-4">
         <div class="flex justify-between items-center mb-6">
@@ -40,6 +40,5 @@
             </div>
         </form>
     </div>
-
-    <x-footer></x-footer>
-</x-layout>
+    <x-user.footer></x-user.footer>
+</x-user.layout>

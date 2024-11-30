@@ -22,13 +22,14 @@
     </head>
 
     <body>
-        @if($errors->any())
+        {{-- @if($errors->any())
             <x-alert type="error" :message="$errors->first()" />
         @endif
 
         @if(session('success'))
             <x-alert type="success" :message="session('success')" />
-        @endif
+        @endif --}}
+        
         <main>
             {{ $slot }}
         </main>

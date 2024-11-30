@@ -1,9 +1,7 @@
-<x-admin-layout>
+{{-- <x-admin-layout>
     <footer class="bg-gray-800 text-gray-200 py-6">
         <div class="container mx-auto px-4">
-            <!-- Grid for larger screens -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-                <!-- Section 2: Quick Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
                     <ul class="space-y-2">
@@ -14,7 +12,6 @@
                     </ul>
                 </div>
 
-                <!-- Section 3: Contact -->
                 <div>
                     <h4 class="text-lg font-semibold mb-2">Contact</h4>
                     <p class="text-sm">Email: <a href="mailto:admin@example.com" class="hover:text-gray-400">admin@example.com</a></p>
@@ -23,10 +20,8 @@
                 </div>
             </div>
 
-            <!-- Divider -->
             <hr class="my-6 border-gray-700">
 
-            <!-- Footer Bottom -->
             <div class="flex flex-col md:flex-row items-center justify-between text-sm">
                 <p class="text-center md:text-left mb-2 md:mb-0">
                     © 2024 Developed by <span class="font-semibold">Loyd</span>. All rights reserved.
@@ -38,4 +33,4 @@
             </div>
         </div>
     </footer>
-</x-admin-layout>
+</x-admin-layout> --}}

@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+{{-- <nav class="w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <div class="px-3 py-3 lg:px-5 lg:pl-3 flex items-center justify-between">
         <!-- Logo and Menu Button -->
         <div class="flex items-center">
@@ -17,64 +17,53 @@
             </button>
         </div>
     </div>
-</nav>
+</nav> --}}
 <div class="flex min-h-screen bg-gray-100 dark:bg-gray-900">
     <!-- Sidebar -->
-    <aside class="w-64 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <aside class="w-64 bg-white border-r border-gray-200 dark:border-gray-700">
         <div class="h-full px-4 py-6">
             <ul class="space-y-4">
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('admin.dashboard')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('admin.products.index')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Products
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('admin.orders.index')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Orders
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="{{route('admin.users.index')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Customers
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Sales & Analytics
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Payments
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Discounts & Coupons
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('')}}" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <a href="#" class="block px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600">
                         Settings
                     </a>
                 </li>
             </ul>
         </div>
     </aside>
-
-    <!-- Main Content -->
-    <main class="flex-1 p-12">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Welcome to the Admin Dashboard</h1>
-            <p class="text-gray-700 dark:text-gray-300">
-                Here you can manage your application settings, view analytics, and perform administrative tasks.
-            </p>
-            <!-- Add more content here -->
-        </div>
-    </main>
 </div>

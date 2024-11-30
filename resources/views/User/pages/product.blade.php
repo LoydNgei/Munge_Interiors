@@ -1,6 +1,5 @@
-<x-layout>
-    <x-navbar></x-navbar>
-    <!-- breadcrumb -->
+<x-user.layout>
+    <x-user.navbar></x-user.navbar>
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
             <i class="fa-solid fa-house"></i>
@@ -10,7 +9,6 @@
         </span>
         <p class="text-gray-600 font-medium">Product</p>
     </div>
-    <!-- ./breadcrumb -->
 
     <!-- product-detail -->
     <div class="container grid grid-cols-2 gap-6">
@@ -365,5 +363,5 @@
     </div>
     <!-- ./related product -->
 
-<x-footer></x-footer>
-</x-layout>
+    <x-user.footer></x-user.footer>
+</x-user.layout>

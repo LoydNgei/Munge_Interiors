@@ -1,6 +1,6 @@
-<x-layout>
-<x-navbar></x-navbar>
-    <!-- breadcrumb -->
+<x-user.layout>
+<x-user.navbar></x-user.navbar>
+
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
             <i class="fa-solid fa-house"></i>
@@ -10,11 +10,8 @@
         </span>
         <p class="text-gray-600 font-medium">Checkout</p>
     </div>
-    <!-- ./breadcrumb -->
 
-    <!-- wrapper -->
     <div class="container grid grid-cols-12 items-start pb-16 pt-4 gap-6">
-
         <div class="col-span-8 border border-gray-200 p-4 rounded">
             <h3 class="text-lg font-medium capitalize mb-4">Checkout</h3>
             <div class="space-y-4">
@@ -135,8 +132,5 @@
         </div>
 
     </div>
-    <!-- ./wrapper -->
-
-<x-footer></x-footer>
-
-</x-layout>
+    <x-user.footer></x-user.footer>
+</x-user.layout>

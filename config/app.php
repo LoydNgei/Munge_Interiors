@@ -44,6 +44,7 @@ return [
 
     'debug' => (bool) env('APP_DEBUG', false),
 
+
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -184,5 +185,9 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+    // enable debugging
+    // 'debug' => true,
+
 
 ];

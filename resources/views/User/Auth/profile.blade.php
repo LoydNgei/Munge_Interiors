@@ -1,6 +1,5 @@
-<x-layout>
-    <x-navbar></x-navbar>
-
+<x-user.layout>
+    <x-user.navbar></x-user.navbar>
     <!-- breadcrumb -->
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
@@ -31,7 +30,7 @@
 
             <div class="mt-6 bg-white shadow rounded p-4 divide-y divide-gray-200 space-y-4 text-gray-600">
                 <div class="space-y-1 pl-8">
-                    <a href="#" class="block font-medium capitalize transition">
+                    <a href="#" class="relative text-primary block font-medium capitalize transition">
                         <span class="absolute -left-8 top-0 text-base">
                             <i class="fa-regular fa-address-card"></i>
                         </span>
@@ -79,7 +78,7 @@
                 </div>
 
                 <div class="space-y-1 pl-8 pt-4">
-                    <a href="#" class="relative text-primary block font-medium capitalize transition">
+                    <a href="#" class="relative hover:text-primary block font-medium capitalize transition">
                         <span class="absolute -left-8 top-0 text-base">
                             <i class="fa-regular fa-heart"></i>
                         </span>
@@ -100,66 +99,57 @@
         </div>
         <!-- ./sidebar -->
 
-        <!-- wishlist -->
-        <div class="col-span-9 space-y-4">
-            <div class="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
-                <div class="w-28">
-                    <img src="../assets/images/products/product6.jpg" alt="product 6" class="w-full">
+        <!-- info -->
+        <div class="col-span-9 shadow rounded px-6 pt-5 pb-7">
+            <h4 class="text-lg font-medium capitalize mb-4">
+                Profile information
+            </h4>
+            <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="first">First name</label>
+                        <input type="text" name="first" id="first" class="input-box">
+                    </div>
+                    <div>
+                        <label for="last">Last name</label>
+                        <input type="text" name="last" id="last" class="input-box">
+                    </div>
                 </div>
-                <div class="w-1/3">
-                    <h2 class="text-gray-800 text-xl font-medium uppercase">Italian L shape</h2>
-                    <p class="text-gray-500 text-sm">Availability: <span class="text-green-600">In Stock</span></p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="birthday">Birthday</label>
+                        <input type="date" name="birthday" id="birthday" class="input-box">
+                    </div>
+                    <div>
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender" class="input-box">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="text-primary text-lg font-semibold">$320.00</div>
-                <a href="#"
-                    class="px-6 py-2 text-center text-sm text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">add
-                    to cart</a>
-
-                <div class="text-gray-600 cursor-pointer hover:text-primary">
-                    <i class="fa-solid fa-trash"></i>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" class="input-box">
+                    </div>
+                    <div>
+                        <label for="phone">Phone number</label>
+                        <input type="text" name="phone" id="phone" class="input-box">
+                    </div>
                 </div>
             </div>
 
-            <div class="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
-                <div class="w-28">
-                    <img src="../assets/images/products/product5.jpg" alt="product 6" class="w-full">
-                </div>
-                <div class="w-1/3">
-                    <h2 class="text-gray-800 text-xl font-medium uppercase">Dining Table</h2>
-                    <p class="text-gray-500 text-sm">Availability: <span class="text-green-600">In Stock</span></p>
-                </div>
-                <div class="text-primary text-lg font-semibold">$320.00</div>
-                <a href="#"
-                    class="px-6 py-2 text-center text-sm text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">add
-                    to cart</a>
-
-                <div class="text-gray-600 cursor-pointer hover:text-primary">
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-            </div>
-
-            <div class="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
-                <div class="w-28">
-                    <img src="../assets/images/products/product10.jpg" alt="product 6" class="w-full">
-                </div>
-                <div class="w-1/3">
-                    <h2 class="text-gray-800 text-xl font-medium uppercase">Sofa</h2>
-                    <p class="text-gray-500 text-sm">Availability: <span class="text-red-600">Out of Stock</span></p>
-                </div>
-                <div class="text-primary text-lg font-semibold">$320.00</div>
-                <a href="#"
-                    class="cursor-not-allowed px-6 py-2 text-center text-sm text-white bg-red-400 border border-red-400 rounded transition uppercase font-roboto font-medium">add
-                    to cart</a>
-
-                <div class="text-gray-600 cursor-pointer hover:text-primary">
-                    <i class="fa-solid fa-trash"></i>
-                </div>
+            <div class="mt-4">
+                <button type="submit"
+                    class="py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">save
+                    changes</button>
             </div>
         </div>
-        <!-- ./wishlist -->
+        <!-- ./info -->
 
     </div>
     <!-- ./wrapper -->
-
-    <x-footer></x-footer>
-</x-layout>
+    
+    <x-user.footer></x-user.footer>
+</x-user.layout>

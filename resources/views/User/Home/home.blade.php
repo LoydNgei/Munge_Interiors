@@ -1,0 +1,11 @@
+<x-user.layout>
+        <x-user.navbar></x-user.navbar>
+        <x-user.banner></x-user.banner>
+        <x-user.features></x-user.features>
+        <x-user.categories></x-user.categories>
+        <x-user.newarrivals></x-user.newarrivals>
+        <x-user.ads></x-user.ads>
+        <x-user.product></x-user.product>
+        <x-user.footer></x-user.footer>
+        <x-user.alert></x-user.alert>
+</x-user.layout>
