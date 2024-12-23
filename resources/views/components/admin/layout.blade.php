@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
         @vite('resources/css/app.css')
     </head>
-
+    
     <body>
         <main>
             {{ $slot }}

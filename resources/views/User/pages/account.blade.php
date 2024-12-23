@@ -73,9 +73,7 @@
 
         </div>
         <!-- ./info -->
-
     </div>
     <!-- ./account wrapper -->
-
     <x-user.footer></x-user.footer>
 </x-user.layout>

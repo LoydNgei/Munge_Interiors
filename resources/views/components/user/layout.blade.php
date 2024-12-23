@@ -23,11 +23,11 @@
 
     <body>
         {{-- @if($errors->any())
-            <x-alert type="error" :message="$errors->first()" />
+            <x-user.alert type="error" :message="$errors->first()" />
         @endif
 
         @if(session('success'))
-            <x-alert type="success" :message="session('success')" />
+            <x-user.alert type="success" :message="session('success')" />
         @endif --}}
         
         <main>

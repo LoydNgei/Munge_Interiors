@@ -7,5 +7,4 @@
         <x-user.ads></x-user.ads>
         <x-user.product></x-user.product>
         <x-user.footer></x-user.footer>
-        <x-user.alert></x-user.alert>
 </x-user.layout>
