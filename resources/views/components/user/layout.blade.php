@@ -21,15 +21,7 @@
         
     </head>
 
-    <body>
-        {{-- @if($errors->any())
-            <x-user.alert type="error" :message="$errors->first()" />
-        @endif
-
-        @if(session('success'))
-            <x-user.alert type="success" :message="session('success')" />
-        @endif --}}
-        
+    <body>        
         <main>
             {{ $slot }}
         </main>
