@@ -9,6 +9,9 @@
                 {{-- <a href="{{url('/admin/login')}}" class="text-gray-200 hover:text-white transition">Admin</a> --}}
                 <a href="{{url('logout')}}" class="text-gray-200 hover:text-white transition">Logout</a>
             </div>
+            <div>
+                <h3 class="text-gray-200 hover:text-white transition p-4">Welcome {{auth()->user()->name}}</h3>
+            </div>
         </div>
     </nav> 
     <div class="container flex items-center justify-between py-4 shadow-sm bg-white">
