@@ -62,7 +62,7 @@ class UserController extends Controller
 
     public function logout () {
         Session::flush();
-        Auth::logout;
+        Auth::logout();
         return redirect('login')->with('message', 'Oops! you logged out!');
     }
 
