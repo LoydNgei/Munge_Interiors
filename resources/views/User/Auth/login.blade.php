@@ -1,6 +1,5 @@
 <x-user.layout>
     <x-user.navbar></x-user.navbar>
-    
     <!-- login -->
     <div class="contain py-16">
         <div class="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
