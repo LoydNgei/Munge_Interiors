@@ -7,20 +7,20 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     // Display a listing of the products
-    public function index()
+    public function viewproducts()
     {
         $products = Product::all();
-        return view('Admin.Products.index', compact('products'));
+        return view('Admin.Products.viewproducts', compact('products'));
     }
 
+
     // Show the form for creating a new product
-    public function create()
-    {
-        return view('products.create');
+    public function productsform() {
+        return view('Admin.Products.postproduct');
     }
 
     // Store a newly created product in storage
-    public function store(Request $request)
+    public function createproduct(Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -29,24 +29,23 @@ class ProductController extends Controller
 
         Product::create($request->all());
 
-        return redirect()->route('products.index')
-                            ->with('success', 'Product created successfully.');
+        return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }
 
     // Display the specified product
-    public function show(Product $product)
+    public function showproduct(Product $product)
     {
         return view('products.show', compact('product'));
     }
 
     // Show the form for editing the specified product
-    public function edit(Product $product)
+    public function editproduct(Product $product)
     {
         return view('products.edit', compact('product'));
     }
 
     // Update the specified product in storage
-    public function update(Request $request, Product $product)
+    public function updateproduct(Request $request, Product $product)
     {
         $request->validate([
             'name' => 'required',
@@ -55,16 +54,13 @@ class ProductController extends Controller
 
         $product->update($request->all());
 
-        return redirect()->route('products.index')
-                            ->with('success', 'Product updated successfully.');
+        return redirect()->route('products.index')->with('success', 'Product updated successfully.');
     }
 
     // Remove the specified product from storage
-    public function destroy(Product $product)
+    public function destroyproduct(Product $product)
     {
         $product->delete();
-
-        return redirect()->route('products.index')
-                            ->with('success', 'Product deleted successfully.');
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
     }
 }
