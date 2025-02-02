@@ -10,7 +10,7 @@
                 <a href="{{url('logout')}}" class="text-gray-200 hover:text-white transition">Logout</a>
             </div>
             <div>
-                <h3 class="text-gray-200 hover:text-white transition p-4">Welcome {{auth()->user()->name}}</h3>
+                {{-- <h3 class="text-gray-200 hover:text-white transition p-4">Welcome {{auth()->user()->name}}</h3> --}}
             </div>
         </div>
     </nav> 

@@ -1,11 +1,5 @@
 <x-admin.layout>
     <div class="flex h-screen">
-        <!-- Sidebar -->
-        <aside class="w-1/5 bg-gray-800 text-white p-4">
-            <x-admin.nav></x-admin.nav>
-        </aside>
-
-        <!-- Main Content -->
         <main class="flex-1 bg-gray-100 p-6">
             <div class="bg-white shadow-md rounded-lg p-6 mx-auto max-w-4xl">
                 <h1 class="font-semibold text-xl mb-4 text-center">Users</h1>
@@ -36,5 +30,4 @@
             </div>
         </main>
     </div>
-    <x-admin.footer></x-admin.footer>
 </x-admin.layout>

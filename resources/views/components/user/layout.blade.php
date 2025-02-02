@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,10 +14,7 @@
         <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
         <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
         <script src="{{ asset('js/alert.js') }}" defer></script>
-
-
-        @vite('resources/css/app.css')
-        
+        @vite('resources/css/app.css') 
     </head>
 
     <body>        

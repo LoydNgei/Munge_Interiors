@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +15,14 @@
         @vite('resources/css/app.css')
     </head>
     
-    <body>
-        <main>
-            {{ $slot }}
-        </main>
-    </body>
+    <body class="bg-gray-100 dark:bg-gray-900">
+        <x-admin.nav></x-admin.nav>
+        <div class="flex">
+            <x-admin.sidebar></x-admin.sidebar>
+            <div class="flex-grow p-6">
+                {{ $slot }}
+            </div>
+        </div>
+        <x-admin.footer></x-admin.footer>
+        <script src="{{ asset('js/sidebar.js') }}"></script>
 </html>

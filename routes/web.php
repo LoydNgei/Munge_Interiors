@@ -11,16 +11,6 @@ use App\Http\Controllers\OrderController;
 use App\Http\Middleware\EnsureLoggedIn;
 use App\Http\Middleware\CheckAdmin;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 
 // Home
@@ -86,4 +76,15 @@ Route::prefix('admin')->middleware(['check.admin'])->group(function () {
     Route::resource('/products', ProductController::class, ['as' => 'admin']);
     Route::resource('/orders', OrderController::class, ['as' => 'admin']);
     Route::resource('/users', UserController::class, ['only' => ['index'], 'as' => 'admin']);
+});
+
+
+// Admin Products CRUD operations
+Route::prefix('products')->group(function () {
+    Route::get('/', [ProductController::class, 'viewproducts'])->name('products.view');
+    Route::get('/form', [ProductController::class, 'productsform'])->name('products.viewform');
+    Route::get('/product/{product}', [ProductController::class, 'editproduct'])->name('products.edit');
+    Route::post('/form', [ProductController::class, 'createproduct'])->name('products.postform');
+    Route::put('/product/{product}', [ProductController::class, ''])->name('products.editform');
+    Route::delete('/delete/{product}', [ProductController::class, ''])->name('products.delete');
 });
