@@ -1,4 +1,4 @@
-<x-admin.layout>
+<x-user.layout>
         <!-- Error and Success Messages -->
         @if($errors->any())
             <div class="alert-message error">
@@ -47,5 +47,4 @@
                 </p>
             </div>
         </div>
-    <x-admin.footer></x-admin.footer>
-</x-admin.layout>
+</x-user.layout>
